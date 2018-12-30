@@ -38,6 +38,9 @@ class Enemy(Character):
     def get_weakness(self):
         return self.weakness
 
+    def send_to_sleep(self):
+        print(self.name + " is now asleep!")
+
     def fight(self, combat_item):
         if combat_item == self.weakness:
             print("You fend " + self.name + " off with the " + combat_item )
@@ -46,3 +49,10 @@ class Enemy(Character):
             print(self.name + " crushes you, puny adventurer")
             return False
 
+class Friend(Character):
+    def __init__(self, char_name, char_description):
+        super().__init__(char_name, char_description)
+
+    def hug(self):
+        print(self.name + " hugged you back!")
+        
